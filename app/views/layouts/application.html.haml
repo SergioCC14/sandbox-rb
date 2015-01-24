@@ -1,0 +1,9 @@
+%html{:itemscope => "itemscope", :itemtype => "http://schema.org/WebPage"}
+  %head
+    %title Sandbox-Rb
+    = stylesheet_link_tag    'application', media: "all", "data-turbolinks-track" => true
+    = javascript_include_tag 'application', "data-turbolinks-track" => true
+    
+    = csrf_meta_tags
+  %body
+    = yield
