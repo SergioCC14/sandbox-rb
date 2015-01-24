@@ -14,6 +14,13 @@ gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .js.coffee assets and views
 gem 'coffee-rails', '~> 4.0.0'
 
+# Redbooth
+gem 'redbooth-ruby'
+gem "omniauth-redbooth"
+
+# OAuth2
+# gem 'oauth2', '~> 0.8.0'
+
 # Gestión de Assets
 # gem "asset_sync"
 
