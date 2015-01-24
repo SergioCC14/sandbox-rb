@@ -21,8 +21,7 @@ gem "omniauth-redbooth"
 # OAuth2
 # gem 'oauth2', '~> 0.8.0'
 
-# Gestión de Assets
-# gem "asset_sync"
+gem "awesome_print" # Permite que en consola podamos poner 'ap objeto' y pinte el objeto de forma más legible
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
