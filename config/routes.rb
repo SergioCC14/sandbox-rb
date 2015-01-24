@@ -4,6 +4,6 @@ SandboxRb::Application.routes.draw do
 
   get '/auth/redbooth/callback', to: 'redbooth_accounts#signup_redbooth'
 
-  resources :users
+  resources :clients
   
 end

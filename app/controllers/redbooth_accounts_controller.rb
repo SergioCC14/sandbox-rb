@@ -10,7 +10,7 @@ class RedboothAccountsController < ApplicationController
 
       iniciar_sesion(client)
 
-      redirect_to user_path(client(:show).id)
+      redirect_to client_path(:id => client.me(:show).id)
 
     
     else
