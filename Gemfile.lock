@@ -4,6 +4,16 @@ GIT
   specs:
     exifr (1.2.0)
 
+GIT
+  remote: https://github.com/teambox/redbooth-ruby
+  revision: 577a4b50794cd48953995e3c7df139dce07c6575
+  ref: 577a4b50794cd48953995e3c7df139dce07c6575
+  specs:
+    redbooth-ruby (0.0.6)
+      json (>= 1.8.1)
+      multipart-post (>= 1.1.0)
+      oauth2 (>= 0.9.3)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -125,10 +135,6 @@ GEM
     rake (10.4.2)
     rdoc (4.2.0)
       json (~> 1.4)
-    redbooth-ruby (0.0.5)
-      json (>= 1.8.1)
-      multipart-post (>= 1.1.0)
-      oauth2 (>= 0.9.3)
     ruby_parser (3.6.4)
       sexp_processor (~> 4.1)
     sass (3.2.19)
@@ -174,7 +180,7 @@ DEPENDENCIES
   paperclip (~> 3.0)
   pg
   rails (= 4.0.11.1)
-  redbooth-ruby
+  redbooth-ruby!
   sass-rails (~> 4.0.2)
   sdoc
   turbolinks

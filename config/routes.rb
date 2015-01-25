@@ -6,5 +6,6 @@ SandboxRb::Application.routes.draw do
   get '/signout', :to => 'application#signout', :as => 'signout'
 
   resources :clients
+  resources :projects
   
 end

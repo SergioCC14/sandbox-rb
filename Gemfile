@@ -15,7 +15,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
 
 # Redbooth
-gem 'redbooth-ruby'
+gem 'redbooth-ruby', :git => 'https://github.com/teambox/redbooth-ruby', :ref => '577a4b50794cd48953995e3c7df139dce07c6575'
 gem "omniauth-redbooth"
 
 # OAuth2

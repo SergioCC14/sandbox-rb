@@ -1,6 +1,5 @@
-.project_row
+= link_to(project_path(:id => project.id), :class => 'project_row inline-block') do
   %h5
     %div= project.name
     %small=Time.at(project.created_at).strftime("%d/%m/%Y")
-  %div=raw project.description
-
+  .text= raw strip_links(project.description)

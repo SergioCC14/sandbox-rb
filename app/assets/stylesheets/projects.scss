@@ -3,9 +3,31 @@
   background-color: #DDDDDD;
   margin-bottom: 10px;
   border-radius: 3px;
+  width: 100%;
+  h5 {
+    color: #333333;
+  }
+  .text {
+    color: #5B5B5B;
+  }
 }
 
 .project_row:hover {
   box-shadow: 0px 0px 5px #B0B0B0;
   cursor: pointer;
+}
+
+.project-info {
+  table {
+    font-size: 12px;
+    tr {
+      td {
+        border-color: transparent;    
+      }
+      td.title {
+        font-weight: bold;
+      }
+    }
+
+  }
 }

@@ -1,2 +1,18 @@
-/ Aquí aparecerá /sergiocanis/projecto-lo-que-sea
-/ Con sus task
+%h1
+  ="Project"
+  %small=project.name
+
+.project-info
+  %table.table.table-condensed
+    %tr
+      %td.title="Created"
+      %td=Time.at(project.created_at).strftime("%d/%m/%Y")  
+    %tr  
+      %td.title="Last updated"
+      %td=Time.at(project.updated_at).strftime("%d/%m/%Y")  
+    %tr
+      %td.title="Description"
+      %td=raw project.description
+
+.task_lists
+  
