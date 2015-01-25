@@ -3,6 +3,8 @@ class ProjectsController < ApplicationController
   include SessionsHelper
   include ApplicationHelper
 
+  before_filter :connected?
+
   def show
     session = RedboothRuby::Session.new(token: current_token)
     client = RedboothRuby::Client.new(session)

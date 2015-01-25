@@ -3,6 +3,8 @@ class ClientsController < ApplicationController
   include SessionsHelper
   include ApplicationHelper
 
+  before_filter :connected?
+  
   def show
     if (@client = Client.api_find(params[:id],current_token))
       

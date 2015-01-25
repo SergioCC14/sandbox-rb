@@ -11,7 +11,9 @@ SandboxRb::Application.routes.draw do
       resources :task_lists
     end
   end
-  
+
   resources :tasks
+
+  delete '/task_lists/:id', :to => 'task_lists#destroy', :as => 'deelete_task_list'
 
 end

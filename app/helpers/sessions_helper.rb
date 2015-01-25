@@ -25,9 +25,12 @@ module SessionsHelper
   end
 
   def current_client
-    session = RedboothRuby::Session.new(token: cookies["sandbox_rb_token"])
-    client = RedboothRuby::Client.new(session)
-    @current_client ||= client.me(:show)
+    begin
+      session = RedboothRuby::Session.new(token: cookies["sandbox_rb_token"])
+      client = RedboothRuby::Client.new(session)
+      @current_client ||= client.me(:show)
+    rescue => e
+    end
   end
 
   # Comprueba si el usuario es el mismo que el usuario que navega

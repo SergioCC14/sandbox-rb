@@ -9,7 +9,7 @@
         = text_field_tag :name, '', class: 'form-control', :required => true
       .form-group.form-inline 
         %label Description
-        = text_area_tag :description, '', class: 'form-control'
+        = text_area_tag :description, '', class: 'form-control', :required => true
 
       .pull-right
         =submit_tag("Create", :class => 'btn btn-primary')

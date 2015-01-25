@@ -10,6 +10,14 @@ class ApplicationController < ActionController::Base
     redirect_to root_url
   end
 
+  # Check if the user is connected
+  def connected?
+    if !signed_in?
+      redirect_to root_path
+    end
+  end
+
+
   def error404
     respond_to do |format|
       format.js { render :nothing => true }
