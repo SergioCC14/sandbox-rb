@@ -1,0 +1,14 @@
+.btn.btn-default.btn-xs.pull-right{:onclick => "$('#new_task_for_#{task_list.id}').removeClass('hide'); $(this).hide()", :style => 'margin-top: 5px;'}="+ Tag"
+.clearfix
+.hide{:id => "new_task_for_#{task_list.id}"}
+  .task.new-task.inline-block{:id => "new_task_for_#{task_list.id}"}
+    = form_tag(task_lists_path, :method => 'POST') do
+      .form-group.form-inline 
+        %label Name
+        = text_field_tag :name, '', class: 'form-control', :required => true
+      .form-group.form-inline 
+        %label Description
+        = text_area_tag :description, '', class: 'form-control'
+
+      .pull-right
+        =submit_tag("Create", :class => 'btn btn-primary btn-xs')

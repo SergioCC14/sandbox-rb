@@ -1,5 +1,7 @@
 .client_block
-  =image_tag(client.as_json['profile_avatar_url'])
+  =link_to(client_path(client.id)) do
+    =image_tag(client.as_json['profile_avatar_url'])
+
   %h3
     =link_to("#{client.first_name} #{client.last_name}", client_path(client.id))
     %small="(#{client.as_json['username']})"

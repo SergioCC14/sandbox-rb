@@ -11,5 +11,20 @@
         font-size: 12px;
       }
     }
+    .new-task.task {
+      cursor: default;
+      width: 100%;
+      padding: 10px;
+      label {
+        width: 100px;
+      }
+    }
   }
+  .new-task-list.project_row {
+    cursor: default;
+    label {
+      width: 100px;
+    }
+  }
+
 }

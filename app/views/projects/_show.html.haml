@@ -17,3 +17,6 @@
 .task_lists
   - @task_lists.each do |tl|
     = render :partial => 'task_lists/task_list_row', :locals => {:task_list => tl}
+
+  %hr
+  = render :partial => 'task_lists/new', :locals => {:project => project}

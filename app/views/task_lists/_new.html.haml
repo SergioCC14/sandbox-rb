@@ -1,0 +1,15 @@
+.btn.btn-default{:onclick => "$('#new_task_list_for_#{project.id}').removeClass('hide'); $(this).hide()"}="Add a new TaskList"
+
+.hide{:id => "new_task_list_for_#{project.id}"}
+  .project_row.new-task-list.inline-block{:id => "new_task_list_for_#{project.id}"}
+    %h3="New TaskList"
+    = form_tag(task_lists_path, :method => 'POST') do
+      .form-group.form-inline 
+        %label Name
+        = text_field_tag :name, '', class: 'form-control', :required => true
+      .form-group.form-inline 
+        %label Description
+        = text_area_tag :description, '', class: 'form-control'
+
+      .pull-right
+        =submit_tag("Create", :class => 'btn btn-primary')
