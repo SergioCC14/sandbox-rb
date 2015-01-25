@@ -4,9 +4,16 @@ class ClientsController < ApplicationController
   include ApplicationHelper
 
   def show
+    if (@client = Client.api_find(params[:id],current_token))
+      
+      # Proyectos
+      session = RedboothRuby::Session.new(token: current_token)
+      client = RedboothRuby::Client.new(session)
+      @projects = client.project(:index).all
 
-    raise current_client.inspect
-    @client = Client.api_find(params[:id])
-
+      render
+    else
+      error404
+    end
   end
 end

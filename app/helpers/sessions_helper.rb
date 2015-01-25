@@ -21,7 +21,7 @@ module SessionsHelper
   end
 
   def current_token
-    
+    return cookies["sandbox_rb_token"]
   end
 
   def current_client

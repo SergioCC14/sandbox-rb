@@ -1,12 +1,9 @@
 class Client < ActiveRecord::Base
 
-
-  def self.api_find(id, current_token)
-
-    raise current_token.inspect
-
-    session = RedboothRuby::Session.new(token: 1)
-    respuesta = RedboothRuby::Client.new(session).me(:show)
+  def self.api_find(id, current_token)  
+    session = RedboothRuby::Session.new(token: current_token)
+    client = RedboothRuby::Client.new(session)
+    respuesta = client.me(:show)
 
     if !respuesta.blank?
       return respuesta

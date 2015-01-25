@@ -5,6 +5,11 @@ class ApplicationController < ActionController::Base
 
   include SessionsHelper
 
+  def signout
+    sign_out
+    redirect_to root_url
+  end
+
   def error404
     respond_to do |format|
       format.js { render :nothing => true }
