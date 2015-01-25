@@ -1,0 +1,6 @@
+.client_block
+  =image_tag(client.as_json['profile_avatar_url'])
+  %h3
+    %div="#{client.first_name} #{client.last_name}"
+    %small="(#{client.as_json['username']})"
+  =link_to("Logout", signout_path)

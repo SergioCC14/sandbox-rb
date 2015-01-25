@@ -1,0 +1,6 @@
+#main_container
+  .col-md-2
+    = render :partial => 'clients/client_block', :locals => {:client => @client}
+
+  .col-md-8
+    = render :partial => 'projects/show', :locals => {:project => @project}

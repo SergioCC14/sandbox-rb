@@ -1,17 +1,8 @@
 #main_container
   .col-md-2
-    =image_tag(@client.as_json['profile_avatar_url'], :style => 'max-width: 100px;')
-    %h3
-      %div="#{@client.first_name} #{@client.last_name}"
-      %small="(#{@client.as_json['username']})"
-    =link_to("Logout", signout_path)
+    = render :partial => 'clients/client_block', :locals => {:client => @client}
 
   .col-md-8
-    %h2="Projects"
+    %h1="Projects"
     - @projects.each do |p|
-      %div{:style => 'padding: 10px 20px 10px; background-color: #DDDDDD; margin-bottom: 10px;'}
-        %h5
-          %div= p.name
-          %small=Time.at(p.created_at).strftime("%d/%m/%Y")
-        %div=raw p.description
-
+      = render :partial => 'projects/project_row', :locals => {:project => p}
