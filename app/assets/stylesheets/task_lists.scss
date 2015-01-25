@@ -1,0 +1,15 @@
+.task_lists {
+  .all_tasks {
+    margin: -20px 5px 5px;
+    padding-top: 10px;
+    .task {
+      background-color: #CCCCCC;
+      padding: 0px 5px; 
+      border: 1px solid rgba(51, 51, 51, 0.2);
+      border-top: 1px solid rgba(51, 51, 51, 0.1);
+      .text {
+        font-size: 12px;
+      }
+    }
+  }
+}

@@ -1,0 +1,5 @@
+.task
+  %h6
+    %div= task.name
+    %small= Time.at(task.created_at).strftime("%d/%m/%Y")
+  .text= raw strip_links(task.description)

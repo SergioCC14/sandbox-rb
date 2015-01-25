@@ -1,11 +1,36 @@
-                Prefix Verb   URI Pattern                       Controller#Action
-                  root GET    /                                 application#index
-auth_redbooth_callback GET    /auth/redbooth/callback(.:format) redbooth_accounts#signup_redbooth
-               clients GET    /clients(.:format)                clients#index
-                       POST   /clients(.:format)                clients#create
-            new_client GET    /clients/new(.:format)            clients#new
-           edit_client GET    /clients/:id/edit(.:format)       clients#edit
-                client GET    /clients/:id(.:format)            clients#show
-                       PATCH  /clients/:id(.:format)            clients#update
-                       PUT    /clients/:id(.:format)            clients#update
-                       DELETE /clients/:id(.:format)            clients#destroy
+                Prefix Verb   URI Pattern                                 Controller#Action
+                  root GET    /                                           application#index
+auth_redbooth_callback GET    /auth/redbooth/callback(.:format)           redbooth_accounts#signup_redbooth
+               signout GET    /signout(.:format)                          application#signout
+               clients GET    /clients(.:format)                          clients#index
+                       POST   /clients(.:format)                          clients#create
+            new_client GET    /clients/new(.:format)                      clients#new
+           edit_client GET    /clients/:id/edit(.:format)                 clients#edit
+                client GET    /clients/:id(.:format)                      clients#show
+                       PATCH  /clients/:id(.:format)                      clients#update
+                       PUT    /clients/:id(.:format)                      clients#update
+                       DELETE /clients/:id(.:format)                      clients#destroy
+            task_lists GET    /projects/:id/task_lists(.:format)          task_lists#index
+                       POST   /projects/:id/task_lists(.:format)          task_lists#create
+         new_task_list GET    /projects/:id/task_lists/new(.:format)      task_lists#new
+        edit_task_list GET    /projects/:id/task_lists/:id/edit(.:format) task_lists#edit
+             task_list GET    /projects/:id/task_lists/:id(.:format)      task_lists#show
+                       PATCH  /projects/:id/task_lists/:id(.:format)      task_lists#update
+                       PUT    /projects/:id/task_lists/:id(.:format)      task_lists#update
+                       DELETE /projects/:id/task_lists/:id(.:format)      task_lists#destroy
+              projects GET    /projects(.:format)                         projects#index
+                       POST   /projects(.:format)                         projects#create
+           new_project GET    /projects/new(.:format)                     projects#new
+          edit_project GET    /projects/:id/edit(.:format)                projects#edit
+               project GET    /projects/:id(.:format)                     projects#show
+                       PATCH  /projects/:id(.:format)                     projects#update
+                       PUT    /projects/:id(.:format)                     projects#update
+                       DELETE /projects/:id(.:format)                     projects#destroy
+                       GET    /task_lists(.:format)                       task_lists#index
+                       POST   /task_lists(.:format)                       task_lists#create
+                       GET    /task_lists/new(.:format)                   task_lists#new
+                       GET    /task_lists/:id/edit(.:format)              task_lists#edit
+                       GET    /task_lists/:id(.:format)                   task_lists#show
+                       PATCH  /task_lists/:id(.:format)                   task_lists#update
+                       PUT    /task_lists/:id(.:format)                   task_lists#update
+                       DELETE /task_lists/:id(.:format)                   task_lists#destroy

@@ -9,13 +9,15 @@ class ProjectsController < ApplicationController
 
     if (@project = client.project(:show, id: params[:id]))
       
-       raise current_token.inspect
-       
       # TasksLists
-      @tasks = client.task_list(:index, project_id: 1314968).all.as_json
+      @task_lists = client.task_list(:index, project_id: params[:id]).all
 
       # Tasks
-      @tasks = client.task(:index, project_id: 1314968).all.as_json
+      # @tasks = {}
+      # @task_lists.each do |tl|
+      #   @tasks[tl.id] = client.task(:index, task_list_id: tl.id)
+
+      # end
 
       render
     else
