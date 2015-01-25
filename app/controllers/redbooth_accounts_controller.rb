@@ -12,7 +12,6 @@ class RedboothAccountsController < ApplicationController
 
       redirect_to client_path(:id => client.me(:show).id)
 
-    
     else
       error404
     end

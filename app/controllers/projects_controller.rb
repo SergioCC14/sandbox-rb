@@ -14,13 +14,6 @@ class ProjectsController < ApplicationController
       # TasksLists
       @task_lists = client.task_list(:index, project_id: params[:id]).all
 
-      # Tasks
-      # @tasks = {}
-      # @task_lists.each do |tl|
-      #   @tasks[tl.id] = client.task(:index, task_list_id: tl.id)
-
-      # end
-
       render
     else
       error404
