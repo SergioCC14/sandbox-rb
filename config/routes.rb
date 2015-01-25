@@ -12,4 +12,6 @@ SandboxRb::Application.routes.draw do
     end
   end
   
+  resources :tasks
+
 end

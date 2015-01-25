@@ -21,6 +21,7 @@ class TaskListsController < ApplicationController
     end
   end
 
+  # POST
   def create
     
     if (!params[:id].blank? and !params[:name].blank?)
@@ -30,6 +31,21 @@ class TaskListsController < ApplicationController
       @task = client.task(:create, task_list_id: params[:id], name: params[:name], description: params[:description])
 
       redirect_to project_path(:id => @task.project_id)
+
+    else
+      error404
+    end
+  end
+
+  # DELETE
+  def destroy
+    if (!params[:id].blank?)
+      session = RedboothRuby::Session.new(token: current_token)
+      client = RedboothRuby::Client.new(session)
+
+      @task_list = client.task_list(:delete, id: params[:id])
+
+      redirect_to project_path(:id => @task_list.project_id)
 
     else
       error404
