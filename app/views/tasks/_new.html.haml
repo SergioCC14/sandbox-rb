@@ -10,5 +10,6 @@
         %label Description
         = text_area_tag :description, '', class: 'form-control'
 
+      = hidden_field_tag 'project_id', task_list.id
       .pull-right
         =submit_tag("Create", :class => 'btn btn-primary btn-xs')

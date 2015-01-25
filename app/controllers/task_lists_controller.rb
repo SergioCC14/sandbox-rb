@@ -20,4 +20,20 @@ class TaskListsController < ApplicationController
       error404
     end
   end
+
+  def create
+    
+    if (!params[:id].blank? and !params[:name].blank?)
+      session = RedboothRuby::Session.new(token: current_token)
+      client = RedboothRuby::Client.new(session)
+
+      @task = client.task(:create, task_list_id: params[:id], name: params[:name], description: params[:description])
+
+      redirect_to project_path(:id => @task.project_id)
+
+    else
+      error404
+    end
+  end
+
 end
