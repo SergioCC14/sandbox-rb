@@ -37,11 +37,5 @@ group :doc do
   gem 'sdoc', require: false
 end
 
-# extract EXIF from image
-gem 'exifr', :git => 'git://github.com/remvee/exifr.git'
-
 # Haml
 gem "haml-rails"
-
-# Paperclip
-gem "paperclip", "~> 3.0"
