@@ -30,6 +30,7 @@ module SessionsHelper
       client = RedboothRuby::Client.new(session)
       @current_client ||= client.me(:show)
     rescue => e
+      
     end
   end
 

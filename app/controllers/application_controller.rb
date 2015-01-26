@@ -14,7 +14,18 @@ class ApplicationController < ActionController::Base
   def connected?
     if !signed_in?
       redirect_to root_path
+    else
+      root_path
     end
+  end
+
+  def index
+    if !current_client.blank?
+      redirect_to client_path(current_client.id)
+    else
+      render
+    end
+
   end
 
 
