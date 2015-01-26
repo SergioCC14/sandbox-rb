@@ -10,12 +10,22 @@
   .text {
     color: #5B5B5B;
   }
-
 }
 
 .project_row:hover {
   box-shadow: 0px 0px 5px #B0B0B0;
   cursor: pointer;
+}
+
+.project_row.new-project {
+  cursor: default;
+
+  input[type='text'], textarea {
+    width: 100%;
+  }
+  textarea {
+    height: 100px;
+  }
 }
 
 .project-info {

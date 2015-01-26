@@ -8,10 +8,14 @@ class ClientsController < ApplicationController
   def show
     if (@client = Client.api_find(params[:id],current_token))
       
-      # Proyectos
       session = RedboothRuby::Session.new(token: current_token)
       client = RedboothRuby::Client.new(session)
+
+      # Projects
       @projects = client.project(:index).all
+
+      # Organizations
+      @organizations = client.organization(:index).all
 
       render
     else

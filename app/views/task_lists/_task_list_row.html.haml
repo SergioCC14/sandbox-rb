@@ -1,10 +1,11 @@
-%div{:id => "task_list_row_#{task_list.id}"}
+.task-list-row{:id => "task_list_row_#{task_list.id}"}
   .project_row.inline-block{:id => "task_list_row_#{task_list.id}_btn"}
     %h5
       %div= task_list.name
       %small=Time.at(task_list.created_at).strftime("%d/%m/%Y")
     .text= "Tasks: (#{task_list.tasks_count})"
 
+  =link_to("X", delete_task_list_path(:p_id => task_list.project_id, :id => task_list.id), :method => :delete, :class => 'delete-task-list', :data => {:confirm => 'Are you sure you want to remove this TaskList?'}, :title => "Delete #{task_list.name}")
 
   :javascript
     $("#task_list_row_#{task_list.id}_btn").click(function() {

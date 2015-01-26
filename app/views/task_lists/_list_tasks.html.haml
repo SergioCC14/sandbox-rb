@@ -2,5 +2,4 @@
   - for task in @tasks
     = render :partial => 'tasks/task_row', :locals => {:task => task}
   
-  =link_to("Delete TaskList", deelete_task_list_path(:p_id => task_list.project_id, :id => task_list.id), :method => :delete, :style => 'position:absolute', :data => {:confirm => 'Are you sure you want to remove this TaskList?'})
   = render :partial => 'tasks/new', :locals => {:task_list => @task_list}

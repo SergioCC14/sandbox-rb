@@ -1,14 +1,14 @@
-.btn.btn-default{:onclick => "$('#new_task_list_for_#{project.id}').removeClass('hide'); $(this).hide()"}="Add a new TaskList"
+.btn.btn-default.project_row.inline-block{:onclick => "$('#new_task_list_for_#{project.id}').removeClass('hide'); $(this).hide()"}="Add a new TaskList"
 
 .hide{:id => "new_task_list_for_#{project.id}"}
   .project_row.new-task-list.inline-block{:id => "new_task_list_for_#{project.id}"}
     %h3="New TaskList"
     = form_tag(task_lists_path, :method => 'POST') do
       .form-group.form-inline 
-        %label Name
+        %h4 Name
         = text_field_tag :name, '', class: 'form-control', :required => true
       .form-group.form-inline 
-        %label Description
+        %h4 Description
         = text_area_tag :description, '', class: 'form-control', :required => true
 
       .pull-right

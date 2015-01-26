@@ -1,0 +1,21 @@
+.btn.btn-default.project_row.inline-block{:onclick => "$('#new_project_for_#{client.id}').removeClass('hide'); $(this).hide()"}="+ Project"
+
+.hide{:id => "new_project_for_#{client.id}"}
+  .project_row.new-project.inline-block{:id => "new_project_for_#{client.id}"}
+    %h3="New Project"
+    = form_tag(projects_path, :method => 'POST') do
+      .form-group.form-inline 
+        %h4 Name
+        = text_field_tag :name, '', class: 'form-control', :required => true
+      .form-group.form-inline 
+        %h4 Description
+        = text_area_tag :description, '', class: 'form-control', :required => true
+      
+      %h4= "Organizations"
+      - @organizations.each do |o|
+        .form-group{:style => 'margin-bottom:0px;'}
+          =radio_button_tag 'organization_id', o.id, :required => true
+          %label.inline-block= o.name
+          
+      .pull-right
+        =submit_tag("Create", :class => 'btn btn-primary')
