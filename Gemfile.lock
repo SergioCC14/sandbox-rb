@@ -1,10 +1,4 @@
 GIT
-  remote: git://github.com/remvee/exifr.git
-  revision: 789ffc4cb80e79359dca8b3a70670d066b52cae5
-  specs:
-    exifr (1.2.0)
-
-GIT
   remote: https://github.com/teambox/redbooth-ruby
   revision: 577a4b50794cd48953995e3c7df139dce07c6575
   ref: 577a4b50794cd48953995e3c7df139dce07c6575
@@ -172,7 +166,6 @@ PLATFORMS
 DEPENDENCIES
   awesome_print
   coffee-rails (~> 4.0.0)
-  exifr!
   haml-rails
   jbuilder (~> 1.2)
   jquery-rails
