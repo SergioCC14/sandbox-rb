@@ -5,6 +5,7 @@ SandboxRb::Application.routes.draw do
   get '/auth/redbooth', :as => 'login_redbooth'
   get '/auth/redbooth/callback', to: 'redbooth_accounts#signup_redbooth'
   get '/signout', :to => 'application#signout', :as => 'signout'
+  get '/sessions', :to => 'sessions#index', :as => 'login', :path => '/login'
 
   resources :clients
   resources :projects do
